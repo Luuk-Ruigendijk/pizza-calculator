@@ -33,6 +33,10 @@ var uiChoose = 0;
 
 var olijvenChoose = 0;
 
+var allPricesTogether = 0;
+
+var currentSelectedPizza;
+
 
 
 
@@ -53,58 +57,80 @@ for (var i = 0; i < q; i++) {
 	document.getElementsByTagName("a")[i].setAttribute("onclick", pizzas[i].pizza + "()"); 
 }
 
-function Margaritha()
-{
-	picture.src = "margaritha.png";
-	document.getElementById("picture").style.display = "block";
-	showPrice.innerHTML = pizzas[0].price;
-	document.getElementById("hideForPizza").style.display = "block";
-	var allPricesTogether = pizzas[0].price + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
-}
-
-function Shoarma()
-{
-	picture.src = "shoarma.png";
-	document.getElementById("picture").style.display = "block";
-	showPrice.innerHTML = pizzas[1].price;
-	document.getElementById("hideForPizza").style.display = "block";
-}
-
-function Funghi()
-{
-	picture.src = "funghi.png";
-	document.getElementById("picture").style.display = "block";
-	showPrice.innerHTML = pizzas[2].price;
-	document.getElementById("hideForPizza").style.display = "block";
-}
-
-function toppingKaas()
-{
-	kaasChoose = 1;
-}
-
-function toppingPepperoni()
-{
-	pepperoniChoose = 1.25;
-}
-
-function toppingUi()
-{
-	uiChoose = 0.75;
-}
-
-function toppingOlijven()
-{
-	olijvenChoose = 2;
-}
-
 function resetToppings()
 {
-	cheeseChoose = 0;
+	kaasChoose = 0;
 
 	pepperoniChoose = 0;
 
 	uiChoose = 0;
 
 	olijvenChoose = 0;
+
+	allPricesTogether = currentSelectedPizza + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	finalPrice.innerHTML = allPricesTogether;
+}
+
+function Margaritha()
+{
+	resetToppings();
+	picture.src = "margaritha.png";
+	document.getElementById("picture").style.display = "block";
+	showPrice.innerHTML = pizzas[0].price;
+	document.getElementById("hideForPizza").style.display = "block";
+	allPricesTogether = pizzas[0].price + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	finalPrice.innerHTML = allPricesTogether;
+	currentSelectedPizza = pizzas[0].price;
+}
+
+function Shoarma()
+{
+	resetToppings();
+	picture.src = "shoarma.png";
+	document.getElementById("picture").style.display = "block";
+	showPrice.innerHTML = pizzas[1].price;
+	document.getElementById("hideForPizza").style.display = "block";
+	allPricesTogether =  pizzas[1].price + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	finalPrice.innerHTML = allPricesTogether;
+	currentSelectedPizza = pizzas[1].price;
+}
+
+function Funghi()
+{
+	resetToppings();
+	picture.src = "funghi.png";
+	document.getElementById("picture").style.display = "block";
+	showPrice.innerHTML = pizzas[2].price;
+	document.getElementById("hideForPizza").style.display = "block";
+	allPricesTogether = pizzas[2].price + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	finalPrice.innerHTML = allPricesTogether;
+	currentSelectedPizza = pizzas[2].price;
+}
+
+function toppingKaas()
+{
+	kaasChoose = 1;
+	allPricesTogether = currentSelectedPizza + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	document.getElementById("finalPrice").innerHTML = allPricesTogether;
+}
+
+function toppingPepperoni()
+{
+	pepperoniChoose = 1.25;
+	allPricesTogether = currentSelectedPizza + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	document.getElementById("finalPrice").innerHTML = allPricesTogether;
+}
+
+function toppingUi()
+{
+	uiChoose = 0.75;
+	allPricesTogether = currentSelectedPizza + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	document.getElementById("finalPrice").innerHTML = allPricesTogether;
+}
+
+function toppingOlijven()
+{
+	olijvenChoose = 2;
+	allPricesTogether = currentSelectedPizza + kaasChoose + pepperoniChoose + uiChoose + olijvenChoose;
+	document.getElementById("finalPrice").innerHTML = allPricesTogether;
 }
