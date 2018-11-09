@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pizza calculator</title>
+	<link rel="stylesheet" type="text/css" href="pizza.css">
+</head>
+<body>
+<h1 id="topTitle">Pizza calculator</h1>
+<div class="collectionOfPizzaDivs">
+	<div id="pizzaListId" class="firstDiv pizzaDivBox">
+		<ol id="listOfPizzas">
+			<p id="justtest"></p>
+		</ol>
+	</div>
+	<div class="secondDiv pizzaDivBox">
+		<img src="#" id="picture">
+		<p id="showPrice"></p>
+		<ul id="hideForPizza">
+			<li>
+				<a href="#" onclick="toppingKaas()">Kaas</a>
+			</li>
+			<li>
+				
+				<a href="#" onclick="toppingPepperoni()">Pepperoni</a>
+			</li>
+			<li>
+				
+				<a href="#" onclick="toppingUi()">Ui</a>
+			</li>
+			<li>
+				
+				<a href="#" onclick="toppingOlijven()">Olijven</a>
+			</li>
+		</ul>
+		<a href="#" onclick="resetToppings()">Reset toppings</a>
+		<p>Eindprijs: <p id="finalPrice"></p></p>
+	</div>
+</div>
+
+<script src="pizza.js"></script>
+</body>
+</html>
