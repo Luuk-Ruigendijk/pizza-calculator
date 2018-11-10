@@ -19,6 +19,16 @@ li{
 	height: 600px;
 }
 
+.firstDiv{
+	border-right-style: solid;
+	border-right-width: 1px;
+}
+
+.secondDiv{
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+
 body{
 	background-image:url(pizzaBackground.jpg);
 	background-repeat: repeat;
