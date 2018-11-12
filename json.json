@@ -1,0 +1,20 @@
+{
+	"pizzas": {
+
+		"pizzaMargaritha": {
+			"pizza": "Margaritha",
+			"image": "MargarithaPicture",
+			"price": 6.50
+		},
+		"pizzaShoarma": {
+			"pizza": "Shoarma",
+			"image": "ShoarmaPicture",
+			"price": 8.50
+		},
+		"pizzaFunghi": {
+			"pizza": "Funghi",
+			"image": "FunghiPicture",
+			"price": 9.50
+		}
+	}
+}
