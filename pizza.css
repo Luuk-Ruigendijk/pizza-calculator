@@ -15,18 +15,20 @@ li{
 
 .pizzaDivBox{
 	background-color: yellow;
-	width: 300px;
 	height: 600px;
+	padding: 40px;
 }
 
 .firstDiv{
 	border-right-style: solid;
 	border-right-width: 1px;
+	width: 190px;
 }
 
 .secondDiv{
 	border-left-style: solid;
 	border-left-width: 1px;
+	width: 410px;
 }
 
 body{
@@ -41,4 +43,5 @@ body{
 
 #hideForPizza{
 	display: none;
+	padding-left: 0px;
 }
