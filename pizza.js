@@ -37,13 +37,13 @@ var toppings = [
 
 var q = pizzas.length;
 
-var kaasPrice = 0;
+//var kaasPrice = 0;
 
-var pepperoniPrice = 0;
+//var pepperoniPrice = 0;
 
-var uiPrice = 0;
+//var uiPrice = 0;
 
-var olijvenPrice = 0;
+//var olijvenPrice = 0;
 
 var allPricesTogether = 0;
 
@@ -112,7 +112,9 @@ function doPizza(pizzaNr)
 
 function pickTopping(toppingNr)
 {
-	chosenToppingPrice = toppings[toppingNr].price;
+	//toppings[toppingNr].price
+	chosenToppingPrice += toppings[toppingNr].price
+	//chosenToppingPrice = toppings[toppingNr].price;
 	showPriceForChosenItems();
 }
 
