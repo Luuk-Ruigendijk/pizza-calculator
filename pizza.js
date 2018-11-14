@@ -91,6 +91,7 @@ showPizzaList()
 function resetChosenToppings()
 {
 	document.getElementById("finalPrice").innerHTML = currentSelectedPizzaPrice;
+	chosenToppingPrice = 0;
 
 	//allPricesTogether = currentSelectedPizza + kaasPrice + pepperoniPrice + uiPrice + olijvenPrice;
 	//finalPrice.innerHTML = allPricesTogether;
