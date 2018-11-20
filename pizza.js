@@ -19,19 +19,23 @@ var pizzas = [
 var toppings = [
 	{
 		name: "Kaas",
-		price: 1
+		price: 1,
+		chosen: false
 	},
 	{
 		name: "Pepperoni",
-		price: 1.25
+		price: 1.25,
+		chosen: false
 	},
 	{
 		name: "Ui",
-		price: 0.75
+		price: 0.75,
+		chosen: false
 	},
 	{
 		name: "Olijven",
-		price: 2
+		price: 2,
+		chosen: false
 	}
 ];
 
@@ -51,8 +55,7 @@ var currentSelectedPizza;
 
 var currentSelectedPizzaPrice;
 
-var chosenToppingPrice = 0;
-
+var chosenToppingPrice = 0
 function showPizzaList()
 {
 	for (var i = 0; i < q; i++) {
@@ -62,7 +65,9 @@ function showPizzaList()
 		//pizzaListLink.setAttribute('href', "#");
 
 		pizzaListLi.innerHTML = pizzas[i].pizzaName;
-		pizzaListLi.setAttribute("onclick", `doPizza(${i})` ); 
+		//pizzaListLi.setAttribute("onclick", `doPizza(${i})` ); 
+		pizzaListLi.pizzaNr = i;
+		pizzaListLi.onclick = doPizza;
 		//pizzaListLi.appendChild(pizzaListLink);
 		document.getElementById('listOfPizzas').appendChild(pizzaListLi);
 		
@@ -92,15 +97,25 @@ function resetChosenToppings()
 {
 	document.getElementById("finalPrice").innerHTML = currentSelectedPizzaPrice;
 	chosenToppingPrice = 0;
-
+	for (var z = 0; z < toppings.length; z++) {
+		toppings[z].chosen = false
+	}
 	//allPricesTogether = currentSelectedPizza + kaasPrice + pepperoniPrice + uiPrice + olijvenPrice;
 	//finalPrice.innerHTML = allPricesTogether;
 }
 
-function doPizza(pizzaNr)
+function doPizza(event)
 {
-	//console.log(pizzas[pizzaNr].pizzaName);
+	for (var i = 0; i < pizzas.length; i++) {
+		//document.getElementById(pizzas[i].pizza).style.background="none";
+	}
+	pizzaNr = event.target.pizzaNr;
 	resetChosenToppings();
+	for (var n = 0; n < 2; n++) {
+		document.getElementsByTagName("li")[n].style
+	}
+	
+	document.getElementsByTagName("li")[pizzaNr].style
 	picture.src = pizzas[pizzaNr].image;
 	document.getElementById("picture").style.display = "block";
 	showPrice.innerHTML = pizzas[pizzaNr].price;
@@ -109,14 +124,19 @@ function doPizza(pizzaNr)
 	//finalPrice.innerHTML = allPricesTogether;
 	currentSelectedPizzaPrice = pizzas[pizzaNr].price;
 	document.getElementById("finalPrice").innerHTML = pizzas[pizzaNr].price;
+	document.getElementById(pizzas[pizzaNr].pizza).style.backgroundColor="grey";
 }
 
 function pickTopping(toppingNr)
 {
+	if (toppings[toppingNr].chosen == false) {
+		chosenToppingPrice += toppings[toppingNr].price;
+		//chosenToppingPrice = toppings[toppingNr].price;
+		showPriceForChosenItems();
+		toppings[toppingNr].chosen = true
+}
 	//toppings[toppingNr].price
-	chosenToppingPrice += toppings[toppingNr].price
-	//chosenToppingPrice = toppings[toppingNr].price;
-	showPriceForChosenItems();
+	
 }
 
 function showPriceForChosenItems()
