@@ -15,7 +15,6 @@ li{
 
 .pizzaDivBox{
 	background-color: yellow;
-	height: 600px;
 	padding: 40px;
 }
 
@@ -32,7 +31,7 @@ li{
 }
 
 body{
-	background-image:url(pizzaBackground.jpg);
+	background-image:url(images/pizzaBackground.jpg);
 	background-repeat: repeat;
 }
 
