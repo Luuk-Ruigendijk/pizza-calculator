@@ -116,7 +116,7 @@ function doPizza(event)
 
 function pizzaSizeChosen(pizzaSize)
 {
-	finalPrice = allPricesTogether * pizzaSize
+	finalPrice = allPricesTogether * pizzaSize;
 	document.getElementById("finalPrice").innerHTML = finalPrice.toFixed(2);
 }
 
