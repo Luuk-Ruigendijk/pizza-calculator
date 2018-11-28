@@ -3,6 +3,6 @@
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "mysql";
-$dbName = "pizzas";
+$dbName = "pizza_database";
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
