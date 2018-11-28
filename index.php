@@ -10,6 +10,14 @@
 </head>
 <body>
 <h1 id="topTitle">Pizza calculator</h1>
+<?php 
+			$sql = "SELECT * FROM pizzas;";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			if ($resultCheck > 0) {
+			while ($row = mysqli_fetch_assoc($result)){echo $row['pizzaName'];}
+		}
+?>
 <div class="collectionOfPizzaDivs">
 	<div id="pizzaListId" class="firstDiv pizzaDivBox">
 		<ol id="listOfPizzas">
@@ -21,8 +29,9 @@
 		<p id="showPrice"></p>
 		<div id="hideForPizza">
 			<h2>Toppings:</h2>
+
 			<ul id="listOfToppings">
-				
+
 			</ul>
 			<a href="#" onclick="resetChosenToppings()">Reset toppings</a>
 			<h2>Hoe groot wil je je pizza?</h2>

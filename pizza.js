@@ -1,16 +1,16 @@
 var pizzas = [
 	{
 		pizzaName: "Margaritha",
-		image: "images/margaritha.png",
-		price: 6.50
+		pizzaPicture: "images/margaritha.png",
+		pizzaPrice: 6.50
 	}, {
 		pizzaName: "Shoarma",
-		image: "images/shoarma.png",
-		price: 8.50
+		pizzaPicture: "images/shoarma.png",
+		pizzaPrice: 8.50
 	}, {
 		pizzaName: "Funghi",
-		image: "images/funghi.png",
-		price: 9.50
+		pizzaPicture: "images/funghi.png",
+		pizzaPrice: 9.50
 	}
 ];
 
@@ -102,14 +102,14 @@ function doPizza(event)
 	//}
 
 	document.getElementsByTagName("li")[pizzaNr].style
-	document.getElementById("picture").src = pizzas[pizzaNr].image;
+	document.getElementById("picture").src = pizzas[pizzaNr].pizzaPicture;
 	document.getElementById("picture").style.display = "block";
-	showPrice.innerHTML = "€" + pizzas[pizzaNr].price;
+	showPrice.innerHTML = "€" + pizzas[pizzaNr].pizzaPrice;
 	document.getElementById("hideForPizza").style.display = "block";
-	//allPricesTogether = pizzas[pizzaNr].price + kaasPrice + pepperoniPrice + uiPrice + olijvenPrice;
+	//allPricesTogether = pizzas[pizzaNr].pizzaPrice + kaasPrice + pepperoniPrice + uiPrice + olijvenPrice;
 	//finalPrice.innerHTML = allPricesTogether;
-	currentSelectedPizzaPrice = pizzas[pizzaNr].price;
-	finalPrice = pizzas[pizzaNr].price;
+	currentSelectedPizzaPrice = pizzas[pizzaNr].pizzaPrice;
+	finalPrice = pizzas[pizzaNr].pizzaPrice;
 	showPriceForChosenItems();
 	document.getElementById(pizzas[pizzaNr].pizzaName).classList.add("backgroundGrey");
 }
