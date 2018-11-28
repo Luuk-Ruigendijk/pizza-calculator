@@ -1,3 +1,7 @@
+<?php
+	include_once 'dbh.inc.php'
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +22,7 @@
 		<div id="hideForPizza">
 			<h2>Toppings:</h2>
 			<ul id="listOfToppings">
-			
-			
+				
 			</ul>
 			<a href="#" onclick="resetChosenToppings()">Reset toppings</a>
 			<h2>Hoe groot wil je je pizza?</h2>
