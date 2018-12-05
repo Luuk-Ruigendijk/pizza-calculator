@@ -1,13 +1,16 @@
 var pizzas = [
 	{
+		pizzaId: 1,
 		pizzaName: "Margaritha",
 		pizzaPicture: "images/margaritha.png",
 		pizzaPrice: 6.50
 	}, {
+		pizzaId: 2,
 		pizzaName: "Shoarma",
 		pizzaPicture: "images/shoarma.png",
 		pizzaPrice: 8.50
 	}, {
+		pizzaId: 3,
 		pizzaName: "Funghi",
 		pizzaPicture: "images/funghi.png",
 		pizzaPrice: 9.50
@@ -56,7 +59,7 @@ function showPizzaList()
 		
 		pizzaListLi.innerHTML = pizzas[i].pizzaName;
 		
-		pizzaListLi.id=pizzas[i].pizzaName;
+		pizzaListLi.id=pizzas[i].pizzaId;
 		pizzaListLi.pizzaNr = i;
 		pizzaListLi.onclick = doPizza;
 		
@@ -111,7 +114,7 @@ function doPizza(event)
 	currentSelectedPizzaPrice = pizzas[pizzaNr].pizzaPrice;
 	finalPrice = pizzas[pizzaNr].pizzaPrice;
 	showPriceForChosenItems();
-	document.getElementById(pizzas[pizzaNr].pizzaName).classList.add("backgroundGrey");
+	document.getElementById(pizzas[pizzaNr].pizzaId).classList.add("backgroundGrey");
 }
 
 function pizzaSizeChosen(pizzaSize)
@@ -142,7 +145,7 @@ try {
             $mysqli = new mysqli("localhost", "root", "mysql", "pizza_database");
 
             
-            $statement = $mysqli->prepare("select username, first_name, last_name, gender from users limit 10");
+            $statement = $mysqli->prepare("select pizzaId, pizzaName, pizzaPicture, pizzaPrice from pizzas limit 10");
 
 
             $statement->execute(); // Execute the statement.
