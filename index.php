@@ -16,7 +16,7 @@
 			$resultCheck = mysqli_num_rows($result);
 			if ($resultCheck > 0) {
 			while ($row = mysqli_fetch_assoc($result)){echo $row['pizzaName'];}
-		}
+		};
 ?>
 <div class="collectionOfPizzaDivs">
 	<div id="pizzaListId" class="firstDiv pizzaDivBox">
@@ -68,7 +68,8 @@
     ?>
 <script src="pizza.js"></script>
 <script type="text/javascript">
-	var pizzas = [
+
+	var pizzas = /*<?php echo $pizzas; ?>*/[
 	{
 		pizzaId: 1,
 		pizzaName: "Margaritha",
@@ -139,10 +140,10 @@ function showPizzaList()
 
 function createToppingList()
 {
-	for (var z = 0; z < toppings.length; z++) {
+	for (var i = 0; i < toppings.length; i++) {
 		shortElementCreate = document.createElement("li");
-		shortElementCreate.innerHTML = toppings[z].name + ": €" + toppings[z].price;
-		shortElementCreate.setAttribute("onclick", `pickTopping(${z})` ); 
+		shortElementCreate.innerHTML = toppings[i].name + ": €" + toppings[i].price;
+		shortElementCreate.setAttribute("onclick", `pickTopping(${i})` ); 
 		document.getElementById('listOfToppings').appendChild(shortElementCreate);
 	}
 }
@@ -158,6 +159,9 @@ function resetChosenToppings()
 	for (var z = 0; z < toppings.length; z++) {
 		toppings[z].chosen = false;
 	}
+	for (var h = 0; h < toppings.length; h++) {
+		document.getElementsByTagName("li")[h + pizzas.length].classList.remove("backgroundGrey");
+	}
 }
 
 function doPizza(event)
@@ -167,6 +171,7 @@ function doPizza(event)
 	for (var n = 0; n < pizzas.length; n++) {
 		document.getElementsByTagName("li")[n].classList.remove("backgroundGrey");
 	}
+
 
 	//for (var n = 0; n < pizzas.length; n++) {
 	//	document.getElementsByTagName("li")[n].classList.remove("backgroundGrey");
@@ -198,6 +203,7 @@ function pickTopping(toppingNr)
 		//chosenToppingPrice = toppings[toppingNr].price;
 		showPriceForChosenItems();
 		toppings[toppingNr].chosen = true
+		document.getElementById(toppings[toppingNr].chosen).classList.add("backgroundGrey");
 	}
 }
 
